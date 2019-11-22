@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--&lt;!&ndash;主题样式&ndash;&gt;-->
+    <!--<style name="dialog_pay_theme" parent="@android:style/Theme.Dialog">-->
+        <!--&lt;!&ndash;边框&ndash;&gt;-->
+        <!--<item name="android:windowFrame">@null</item>-->
+        <!--<item name="android:windowNoTitle">true</item>-->
+        <!--<item name="android:windowBackground">@android:color/transparent</item>-->
+        <!--<item name="android:backgroundDimAmount">0.4</item>&lt;!&ndash;弹框背景灰度&ndash;&gt;-->
+    <!--</style>-->
+
+    <!--&lt;!&ndash;动画方式&ndash;&gt;-->
+    <!--<style name="dialogOpenAnimation" parent="android:Animation">-->
+        <!--<item name="android:windowEnterAnimation">@anim/dialog_payview_in</item>-->
+        <!--<item name="android:windowExitAnimation">@anim/dialog_payview_out</item>-->
+    <!--</style>-->
+
+
+    <!-- 自定义密码键盘显示退出动画 -->
+    <style name="KeyboardDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/KeyboardDialogAnim</item>
+    </style>
+
+    <style name="KeyboardDialogAnim" parent="android:Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/keyboard_show</item>
+        <item name="android:windowExitAnimation">@anim/keyboard_exit</item>
+    </style>
+
+</resources>

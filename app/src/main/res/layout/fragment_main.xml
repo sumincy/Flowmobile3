@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.huateng.ebank.ui.main.vm.MainViewModel" />
+
+        <variable
+            name="viewModel"
+            type="MainViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/fl_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.huateng.ebank.ui.widget.CustomCommonTabLayout xmlns:tl="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/main_tab"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/white"
+            tl:tl_iconHeight="24dp"
+            tl:tl_iconMargin="4dp"
+            tl:tl_iconVisible="true"
+            tl:tl_iconWidth="24dp"
+            tl:tl_tab_padding="24dp"
+            tl:tl_tab_space_equal="true"
+            tl:tl_textSelectColor="@color/colorBlue"
+            tl:tl_textUnselectColor="@color/black_text"
+            tl:tl_textsize="12sp" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="UpdateAppNumberProgressBar">
+        <attr name="progress_current" format="integer" />
+        <attr name="progress_max" format="integer" />
+
+        <attr name="progress_unreached_color" format="color" />
+        <attr name="progress_reached_color" format="color" />
+
+        <attr name="progress_reached_bar_height" format="dimension" />
+        <attr name="progress_unreached_bar_height" format="dimension" />
+
+        <attr name="progress_text_size" format="dimension" />
+        <attr name="progress_text_color" format="color" />
+
+        <attr name="progress_text_offset" format="dimension" />
+
+        <attr name="progress_text_visibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <!-- EditText -->
+    <declare-styleable name="UniversalInput">
+        <attr name="showBg" format="boolean" />
+        <attr name="labelPadding" />
+        <attr name="labelText" />
+        <attr name="labelTextSize" />
+        <attr name="bgColor" />
+        <attr name="labelColor" />
+        <attr name="required" />
+        <attr name="optionIcon" />
+        <attr name="normalColor" format="reference|color" />
+        <attr name="lineHeight" format="dimension" />
+        <attr name="labelWidth" format="dimension" />
+        <attr name="imageSrc" format="reference" />
+        <attr name="inputType" format="enum">
+            <enum name="text" value="0x0" />
+            <enum name="spinner" value="0x1" />
+            <enum name="date" value="0x2" />
+            <enum name="time" value="0x3" />
+            <enum name="image" value="0x4" />
+        </attr>
+        <attr name="bgStyle" format="enum">
+            <enum name="line" value="0" />
+            <enum name="retangle" value="1" />
+        </attr>
+    </declare-styleable>
+
+</resources>

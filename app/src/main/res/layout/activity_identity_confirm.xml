@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.huateng.ebank.ui.auth.vm.IdentityConfirmViewModel" />
+
+        <variable
+            name="viewModel"
+            type="IdentityConfirmViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.tools.view.RxTitle
+            android:id="@+id/rx_title"
+            style="@style/CommontRxToolBarStyle"
+            app:rxLeftText="返回"
+            app:rxTitle="确认身份信息" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/InputItemLayout">
+
+                <TextView
+                    style="@style/InputItemTextView"
+                    android:text="姓名" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    style="@style/InputItemEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <View style="@style/CommonDividerStyle" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/InputItemLayout">
+
+                <TextView
+                    style="@style/InputItemTextView"
+                    android:text="性别" />
+
+                <TextView
+                    android:id="@+id/tv_gender"
+                    style="@style/InputItemEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <View style="@style/CommonDividerStyle" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/InputItemLayout">
+
+                <TextView
+                    style="@style/InputItemTextView"
+                    android:text="出生日期" />
+
+                <TextView
+                    android:id="@+id/tv_birthday"
+                    style="@style/InputItemEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <View style="@style/CommonDividerStyle" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/InputItemLayout">
+
+                <TextView
+                    style="@style/InputItemTextView"
+                    android:text="证件类别" />
+
+                <TextView
+                    android:id="@+id/tv_cardtype"
+                    style="@style/InputItemEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <View style="@style/CommonDividerStyle" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/InputItemLayout">
+
+                <TextView
+                    style="@style/InputItemTextView"
+                    android:text="证件号码" />
+
+                <TextView
+                    android:id="@+id/tv_cardNo"
+                    style="@style/InputItemEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <View style="@style/CommonDividerStyle" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/InputItemLayout">
+
+                <TextView
+                    style="@style/InputItemTextView"
+                    android:text="住址" />
+
+                <TextView
+                    android:id="@+id/tv_address"
+                    style="@style/InputItemEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:maxLines="3"
+                    android:singleLine="false" />
+
+            </LinearLayout>
+
+            <View style="@style/CommonDividerStyle" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/InputItemLayout">
+
+                <TextView
+                    style="@style/InputItemTextView"
+                    android:text="证件有效期" />
+
+                <TextView
+                    android:id="@+id/tv_validDate"
+                    style="@style/InputItemEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <View style="@style/CommonDividerStyle" />
+        </LinearLayout>
+
+
+        <com.noober.background.view.BLButton
+            android:id="@+id/btn_confirm"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/button_margin"
+            android:layout_marginTop="33dp"
+            android:layout_marginRight="@dimen/button_margin"
+            android:layout_marginBottom="33dp"
+            android:text="确认"
+            android:textColor="@android:color/white"
+            app:bl_corners_radius="4dp"
+            app:bl_pressed_solid_color="@color/colorBlueDark"
+            app:bl_solid_color="@color/colorBlue"
+            app:bl_unPressed_solid_color="@color/colorBlue"
+            binding:onClickCommand="@{viewModel.confirmClickEvent}" />
+
+
+    </LinearLayout>
+</layout>

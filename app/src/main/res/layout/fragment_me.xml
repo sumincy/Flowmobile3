@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.huateng.ebank.ui.main.vm.MeViewModel" />
+
+        <variable
+            name="viewModel"
+            type="MeViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.tools.view.RxTitle xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/rx_title"
+            style="@style/CommontRxToolBarStyle"
+            app:rxLeftIconVisibility="false"
+            app:rxLeftTextVisibility="false"
+            app:rxRightText="设置"
+            app:rxRightTextVisibility="true"
+            app:rxTitle="我的" />
+
+
+        <RelativeLayout
+            style="@style/CommonItemLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_item_layout_margin"
+            binding:onClickCommand="@{viewModel.billsClick}">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/CommonItemLayoutLeftImage"
+                    android:src="@mipmap/icon_bills" />
+
+                <TextView
+                    style="@style/CommonItemText"
+                    android:text="账单"
+                    android:textColor="@color/black_text" />
+
+            </LinearLayout>
+
+            <ImageView
+                style="@style/CommonItemLayoutRightImage"
+                android:src="@mipmap/ic_right_arrow" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/CommonItemLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            binding:onClickCommand="@{viewModel.accountClick}">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/CommonItemLayoutLeftImage"
+                    android:src="@mipmap/icon_assets" />
+
+                <TextView
+                    style="@style/CommonItemText"
+                    android:text="资产"
+                    android:textColor="@color/black_text" />
+
+            </LinearLayout>
+
+            <ImageView
+                style="@style/CommonItemLayoutRightImage"
+                android:src="@mipmap/ic_right_arrow" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/CommonItemLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/CommonItemLayoutLeftImage"
+                    android:src="@mipmap/icon_loan" />
+
+                <TextView
+                    style="@style/CommonItemText"
+                    android:text="贷款"
+                    android:textColor="@color/black_text" />
+
+            </LinearLayout>
+
+            <ImageView
+                style="@style/CommonItemLayoutRightImage"
+                android:src="@mipmap/ic_right_arrow" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:src="@mipmap/icon_mcht_pay"
+            android:id="@+id/iv_payLogo"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:paddingLeft="20dp"
+            android:scaleType="fitCenter" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_receiveWay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="商户入账"
+                android:textColor="@color/dark_gary_text"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2019-10-1"
+                android:textColor="@color/dark_gary_text"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_marginRight="12dp"
+            android:layout_weight="0.4"
+            android:gravity="right|center_vertical"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <com.noober.background.view.BLTextView
+                android:id="@+id/tv_flag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:padding="2dp"
+                android:textColor="#fffd4f4e"
+                android:textSize="10sp"
+                android:visibility="gone"
+                app:bl_corners_radius="2dp"
+                app:bl_solid_color="#ffFFE5E5" />
+
+            <TextView
+                android:id="@+id/tv_receipt_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:src="@color/gary_divider" />
+
+</LinearLayout>

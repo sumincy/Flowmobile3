@@ -1,0 +1,7 @@
+[
+  {"key":"1","value":"1-身份证","type":"artifCardType"},
+  {"key":"2","value":"2-香港居民身份证","type":"artifCardType"},
+
+  {"key":"1","value":"01-男","type":"gender"},
+  {"key":"0","value":"02-女","type":"gender"}
+]

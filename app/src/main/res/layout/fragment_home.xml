@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.huateng.ebank.ui.main.vm.HomeViewModel" />
+
+        <variable
+            name="viewModel"
+            type="HomeViewModel" />
+
+        <import type="me.tatarka.bindingcollectionadapter2.LayoutManagers" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LineManagers" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.tools.view.RxTitle xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/rx_title"
+            style="@style/CommontRxToolBarStyle"
+            app:rxLeftIconVisibility="false"
+            app:rxLeftText="欢迎进入华腾银行"
+            app:rxRightText="验证/开户"
+            app:rxRightTextVisibility="false" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_content_height"
+            android:background="@drawable/shape_gradient_blue">
+
+
+            <com.flyco.tablayout.CommonTabLayout xmlns:tl="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/tab_head"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:background="@color/transparent"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                tl:tl_iconHeight="36dp"
+                tl:tl_iconMargin="4dp"
+                tl:tl_iconVisible="true"
+                tl:tl_iconWidth="36dp"
+                tl:tl_indicator_height="0dp"
+                tl:tl_textSelectColor="@color/white"
+                tl:tl_textUnselectColor="@color/white"
+                tl:tl_textsize="12sp" />
+
+
+            <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--android:id="@+id/rl_net_view"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="32dp"-->
+            <!--android:background="@color/ERROR_COLOR"-->
+            <!--android:clickable="true"-->
+            <!--android:padding="4dp"-->
+            <!--android:visibility="@{viewModel.netBarVisibility}"-->
+            <!--binding:onClickCommand="@{viewModel.netBarClick}">-->
+
+            <!--<ImageView-->
+            <!--android:id="@+id/dd"-->
+            <!--android:layout_width="24dp"-->
+            <!--android:layout_height="24dp"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:padding="4dp"-->
+            <!--android:src="@mipmap/msp_edit_warning" />-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/net_title_tv"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginLeft="10dip"-->
+            <!--android:layout_toRightOf="@id/dd"-->
+            <!--android:text="@string/net_unavailable"-->
+            <!--android:textColor="@android:color/white"-->
+            <!--android:textSize="12sp" />-->
+
+            <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginRight="5dp"-->
+            <!--android:src="@mipmap/icon_left_arrow_w" />-->
+
+            <!--</RelativeLayout>-->
+
+            <ViewStub
+                android:id="@+id/vs_mchtTotals"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/img_ripple" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/iv_notify"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/icon_notify" />
+
+            <com.huateng.ebank.ui.widget.VerticalScrollTextView
+                android:id="@+id/tv_adContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_toRightOf="@id/iv_notify"
+                android:padding="6dp"
+                android:textColor="@color/gray"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <!--<View-->
+            <!--android:layout_width="4dp"-->
+            <!--android:layout_height="12dp"-->
+            <!--android:background="#1783EF" />-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:text="理财推荐"
+                android:textColor="#272727"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/sw_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_products"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                binding:layoutManager="@{LayoutManagers.linear()}"
+                tools:listitem="@layout/list_item_financial_product" />
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
+</layout>

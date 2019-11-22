@@ -1,0 +1,76 @@
+apply plugin: 'com.android.library'
+
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode 1
+        versionName "1.2.3"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    //support
+    api rootProject.ext.support["annotations"]
+    api rootProject.ext.support["support-v4"]
+    api rootProject.ext.support["appcompat-v7"]
+    api rootProject.ext.support["recyclerview-v7"]
+    api rootProject.ext.support["design"]
+    api rootProject.ext.support["cardview-v7"]
+    api rootProject.ext.support["design"]
+
+    //rxjava
+    api rootProject.ext.dependencies.rxjava
+    api rootProject.ext.dependencies.rxandroid
+
+    api rootProject.ext.dependencies["converter-gson"]
+    api rootProject.ext.dependencies["adapter-rxjava"]
+
+    //rxbinding
+    api (rootProject.ext.dependencies.rxbinding) {
+        exclude group: 'com.android.support'
+    }
+
+//    //rx权限请求
+//    api(rootProject.ext.dependencies.rxpermissions) {
+//        exclude group: 'com.android.support'
+//    }
+
+    //动画向下版本兼容 nineold包
+    api 'com.nineoldandroids:library:2.4.0'
+
+    //二维码解析
+    implementation files('src/main/libs/zbardecoder.jar')
+    //二维码生成
+    implementation files('src/main/libs/zxing.jar')
+//    //进程
+//    api 'com.jaredrummler:android-processes:1.1.1'
+    //Secure key-value
+    api 'com.scottyab:secure-preferences-lib:0.1.4'
+
+    //pickerView
+    api 'com.contrarywind:Android-PickerView:4.1.4'
+
+    //日志美化
+    api 'com.orhanobut:logger:2.1.1'
+
+    //glide图片加载库
+    api (rootProject.ext.dependencies.glide){
+        exclude group: 'com.android.support'
+        exclude module: 'okhttp-ws'
+    }
+}

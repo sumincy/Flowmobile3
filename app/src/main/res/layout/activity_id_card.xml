@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.huateng.ebank.ui.auth.vm.IDCardViewModel" />
+
+        <variable
+            name="viewModel"
+            type="IDCardViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.tools.view.RxTitle xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/rx_title"
+            style="@style/CommontRxToolBarStyle"
+            app:rxTitle="身份证验证" />
+
+
+        <!--<com.noober.background.view.BLImageButton-->
+        <!--android:id="@+id/iv_front"-->
+        <!--style="?android:attr/borderlessButtonStyle"-->
+        <!--android:layout_width="360dp"-->
+        <!--android:layout_height="180dp"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:text="正面"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--app:bl_corners_radius="4dp"-->
+        <!--android:resource="@mipmap/bg_idcard_back"-->
+        <!--binding:onClickCommand="@{viewModel.idCardFrontClick}" />-->
+
+        <RelativeLayout
+            android:layout_width="360dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp">
+
+            <com.noober.background.view.BLImageView
+                android:id="@+id/mask"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:scaleType="centerCrop"
+                android:visibility="visible"
+                app:bl_corners_radius="6dp"
+                app:bl_solid_color="@color/translucence" />
+
+            <com.huateng.ebank.ui.widget.RoundRectImageView
+                android:id="@+id/iv_front"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:background="@mipmap/bg_idcard_front"
+                android:scaleType="fitCenter" />
+
+            <com.noober.background.view.BLImageView
+                android:id="@+id/iv_add_front"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_centerInParent="true"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/ic_camera"
+                android:visibility="@{viewModel.addFrontVisibility}"
+                app:bl_shape="oval"
+                app:bl_solid_color="@color/white"
+                binding:onClickCommand="@{viewModel.idCardFrontClick}" />
+
+            <com.noober.background.view.BLImageView
+                android:id="@+id/iv_front_del"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/ic_delete_r"
+                android:visibility="@{viewModel.delFrontVisibility}"
+                app:bl_shape="oval"
+                app:bl_solid_color="@android:color/white"
+                binding:onClickCommand="@{viewModel.idCardFrontDelClick}" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="360dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp">
+
+            <com.noober.background.view.BLImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:scaleType="centerCrop"
+                android:visibility="visible"
+                app:bl_corners_radius="6dp"
+                app:bl_solid_color="@color/translucence" />
+
+            <com.huateng.ebank.ui.widget.RoundRectImageView
+                android:id="@+id/iv_back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:background="@mipmap/bg_idcard_back"
+                android:scaleType="fitCenter" />
+
+            <com.noober.background.view.BLImageView
+                android:id="@+id/iv_add_back"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_centerInParent="true"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/ic_camera"
+                android:visibility="@{viewModel.addBackVisibility}"
+                app:bl_shape="oval"
+                app:bl_solid_color="@color/white"
+                binding:onClickCommand="@{viewModel.idCardBackClick}" />
+
+            <com.noober.background.view.BLImageView
+                android:id="@+id/iv_back_del"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/ic_delete_r"
+                android:visibility="@{viewModel.delBackVisibility}"
+                app:bl_shape="oval"
+                app:bl_solid_color="@android:color/white"
+                binding:onClickCommand="@{viewModel.idCardBackDelClick}" />
+
+        </RelativeLayout>
+
+
+        <!--<com.noober.background.view.BLImageButton-->
+        <!--android:id="@+id/iv_back"-->
+        <!--style="?android:attr/borderlessButtonStyle"-->
+        <!--android:layout_width="360dp"-->
+        <!--android:layout_height="180dp"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:text="反面"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--app:bl_corners_radius="4dp"-->
+        <!--app:bl_pressed_solid_color="@color/colorBlueDark"-->
+        <!--app:bl_unPressed_solid_color="@color/colorBlue"-->
+        <!--/>-->
+
+
+        <com.noober.background.view.BLButton
+            android:id="@+id/btn_login"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/button_margin"
+            android:layout_marginTop="33dp"
+            android:layout_marginRight="@dimen/button_margin"
+            android:layout_marginBottom="33dp"
+            android:text="下一步"
+            android:textColor="@android:color/white"
+            app:bl_corners_radius="4dp"
+            app:bl_pressed_solid_color="@color/colorBlueDark"
+            app:bl_solid_color="@color/colorBlue"
+            app:bl_unPressed_solid_color="@color/colorBlue"
+            binding:onClickCommand="@{viewModel.nextStepClick}" />
+
+    </LinearLayout>
+</layout>

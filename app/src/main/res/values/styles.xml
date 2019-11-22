@@ -1,0 +1,178 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorBlue</item>
+        <!-- 设置activity切换动画 -->
+        <!--<item name="android:windowAnimationStyle">@style/activityAnimation</item>-->
+    </style>
+
+
+    <style name="FullScreenTheme" parent="@style/Theme.AppCompat.Light">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowDisablePreview">true</item>
+
+    </style>
+
+    <style name="UpdateAppNumberProgressBar_Red">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+
+        <item name="progress_max">100</item>
+        <item name="progress_current">0</item>
+
+        <item name="progress_unreached_color">#CCCCCC</item>
+        <item name="progress_reached_color">#e94339</item>
+
+        <item name="progress_text_size">12sp</item>
+        <item name="progress_text_color">#e94339</item>
+
+        <item name="progress_reached_bar_height">4dp</item>
+        <item name="progress_unreached_bar_height">3dp</item>
+    </style>
+
+    <style name="UpdateAppDialog" parent="android:style/Theme.Dialog">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="android:windowEnterAnimation">@anim/update_app_window_in</item>
+        <item name="android:windowExitAnimation">@anim/update_app_window_out</item>
+    </style>
+
+    <style name="PermissionBlueStyle" parent="PermissionDefaultNormalStyle">
+        <item name="PermissionButtonBackground">@drawable/selector_common_button</item>
+    </style>
+
+    <style name="CommontRxToolBarStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:background">@drawable/shape_gradient_blue</item>
+        <item name="rxLeftIcon">@mipmap/icon_back</item>
+        <item name="rxLeftIconVisibility">true</item>
+        <item name="rxLeftText">返回</item>
+        <item name="rxLeftTextSize">@dimen/toolbar_left_text_size</item>
+        <item name="rxLeftTextColor">@android:color/white</item>
+        <item name="rxLeftTextVisibility">true</item>
+        <item name="rxRightTextSize">@dimen/toolbar_right_text_size</item>
+        <item name="rxRightTextVisibility">false</item>
+        <item name="rxRightTextColor">@android:color/white</item>
+        <item name="rxTitleSize">@dimen/toolbar_middle_text_size</item>
+        <item name="rxTitleColor">@color/white</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+
+    <style name="CommonItemLayoutLeftImage">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_margin">6dp</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="CommonItemLayoutRightImage">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="CommonItemLayout">
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/selector</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingTop">6dp</item>
+    </style>
+
+    <style name="CommonItemText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginBottom">2dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:textColor">@color/black_text</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="InputItemLayout">
+        <item name="android:clickable">true</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_height">55dp</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="InputItemTextView">
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#989898</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="InputItemEditText">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@color/black_text</item>
+        <!--<item name="android:textColorHint">@color/gray_text</item>-->
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+
+
+    <style name="CommonDividerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/common_item_divide_height</item>
+        <item name="android:layout_marginLeft">@dimen/common_item_land_margin</item>
+        <item name="android:layout_marginRight">@dimen/common_item_land_margin</item>
+        <item name="android:background">@color/colorBackground</item>
+    </style>
+
+    <style name="CommonCheckBoxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/selector_check_style</item>
+    </style>
+
+    <style name="account_assets_progress" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:layout_width">140dp</item>
+        <item name="android:layout_height">16dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:indeterminateOnly">true</item>
+        <item name="android:progressDrawable">@drawable/horizon_progressbar_blue</item>
+    </style>
+
+    <style name="SettingsCellSingleCompoundButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:checked">true</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+</resources>

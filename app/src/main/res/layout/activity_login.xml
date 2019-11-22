@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.huateng.ebank.ui.auth.vm.LoginModel" />
+
+        <variable
+            name="viewModel"
+            type="LoginModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/bg_login"
+        android:orientation="vertical">
+
+        <com.tools.view.RxTitle xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/rx_title"
+            style="@style/CommontRxToolBarStyle"
+            android:background="@android:color/transparent"
+            app:rxLeftIconVisibility="false"
+            app:rxLeftTextVisibility="false"
+            app:rxRightText="注册"
+            app:rxRightTextVisibility="true"
+            app:rxTitle="登录" />
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginRight="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="60dp"
+                    android:background="@android:color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp">
+
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:paddingLeft="20dp"
+                        android:scaleType="fitCenter"
+                        android:src="@mipmap/icon_tel" />
+
+                    <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:paddingLeft="20dp"-->
+                    <!--android:text="手机号"-->
+                    <!--android:textSize="16sp" />-->
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:background="@null"
+                        android:hint="请输入手机号码"
+                        android:inputType="phone"
+                        android:text="@={viewModel.telNoText}"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:src="@color/gary_divider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:background="@android:color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp">
+
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:paddingLeft="20dp"
+                        android:scaleType="fitCenter"
+                        android:src="@mipmap/icon_key" />
+
+                    <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:paddingLeft="20dp"-->
+                    <!--android:text="验证码"-->
+                    <!--android:textSize="16sp" />-->
+
+                    <EditText
+                        android:id="@+id/et_vcode"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="请输入验证码"
+                        android:inputType="phone"
+                        android:text="@={viewModel.verifyCodeText}"
+                        android:textColor="@color/gray"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_getVerifyCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12dp"
+                        android:background="@null"
+                        android:enabled="@{viewModel.obtainVerifyCodeEnable.get()}"
+                        android:text="@={viewModel.obtainVerifyCodeText}"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="14sp"
+                        binding:onClickCommand="@{viewModel.getVerifyCodeTextClick}" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:src="@color/gary_divider" />
+
+                <com.noober.background.view.BLButton
+                    android:id="@+id/btn_login"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/button_margin"
+                    android:layout_marginTop="33dp"
+                    android:layout_marginRight="@dimen/button_margin"
+                    android:layout_marginBottom="33dp"
+                    android:text="登录"
+                    android:textColor="@android:color/white"
+                    app:bl_corners_radius="4dp"
+                    app:bl_pressed_solid_color="@color/colorBlueDark"
+                    app:bl_solid_color="@color/colorBlue"
+                    app:bl_unPressed_solid_color="@color/colorBlue"
+                    binding:onClickCommand="@{viewModel.loginClick}" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</layout>
