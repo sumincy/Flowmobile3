@@ -10,7 +10,6 @@ import android.support.v4.content.ContextCompat;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.huateng.ebank.R;
 import com.huateng.ebank.app.Paths;
-import com.huateng.ebank.ui.base.BaseSupportFragment;
 import com.orhanobut.logger.Logger;
 import com.tools.view.RxToast;
 

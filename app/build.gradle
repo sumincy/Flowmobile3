@@ -100,7 +100,6 @@ dependencies {
     ///Recyclerview 适配器
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.47'
     implementation 'com.github.iwgang:simplifyspan:2.1'
-    implementation files('libs/ocr-sdk.jar')
     implementation project(path: ':passlibrary')
     implementation project(path: ':hi-permission')
     implementation project(path: ':mvvmhabit')
